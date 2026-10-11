@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reels en Grande · Tus reels con datos, en 5 minutos</title>
-<meta name="description" content="Pago único de 49 €. Le das el pack a Claude y en 5 minutos estás generando reels con datos, voz, subtítulos y música sobre el tema que quieras.">
+<title>Reels en Grande · Reels del tema que quieras, en 5 minutos</title>
+<meta name="description" content="Reels del tema que quieras, con voz, subtítulos, música y datos, en 5 minutos. Pago único: 49 € de lanzamiento hasta el 31 de octubre (después, 79 €).">
 <meta property="og:title" content="Reels en Grande · Tus reels con datos, en 5 minutos">
 <meta property="og:description" content="Pago único. Sin curso. En 5 minutos estás generando el vídeo que quieras.">
 <meta property="og:image" content="https://reelsengrande.com/media/saber-irpf-tramos.jpg">
@@ -42,6 +42,7 @@
   .boton:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 var(--tinta); }
   .boton:active { transform: translate(3px,3px); box-shadow: 3px 3px 0 var(--tinta); }
   .boton.peq { font-size: 16px; padding: 8px 14px; box-shadow: 4px 4px 0 var(--tinta); }
+  .boton, .marca { white-space: nowrap; }
 
   /* hero */
   .hero { padding: 64px 0 72px; }
@@ -102,7 +103,28 @@
   footer .ancho { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
   footer nav { position: static; background: none; border: 0; backdrop-filter: none; display: flex; gap: 18px; }
 
+  .oferta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; background: var(--papel); border: 3px solid var(--tinta); border-radius: 14px; padding: 8px 14px; margin-bottom: 22px; font-weight: 700; font-size: 15px; box-shadow: 4px 4px 0 var(--tinta); }
+  .oferta s { color: var(--gris); }
+  .oferta b { background: var(--rojo); color: #fff; border-radius: 8px; padding: 2px 8px; }
+  .cuenta { font-variant-numeric: tabular-nums; font-family: var(--titular); font-weight: 800; }
+  .temas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .tema { background: var(--papel); border: 3px solid var(--tinta); border-radius: 16px; padding: 16px; box-shadow: 5px 5px 0 var(--tinta); }
+  .tema b { display: block; font-family: var(--titular); font-size: 20px; margin-bottom: 6px; }
+  .tema span { font-size: 15px; color: #37322b; }
+  .ancla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
+  .ancla div { border: 3px solid var(--fondo); border-radius: 18px; padding: 20px; text-align: center; }
+  .ancla strong { display: block; font-family: var(--titular); font-size: 46px; color: var(--amarillo); line-height: 1; }
+  .tachado { font-family: var(--titular); font-weight: 800; font-size: 34px; color: var(--gris); text-decoration: line-through; margin-right: 10px; }
+  .barra-movil { display: none; }
   @media (max-width: 860px) {
+    .temas { grid-template-columns: 1fr 1fr; }
+    .solo-escritorio { display: none; }
+    .marca { font-size: 20px; }
+    .ancla { grid-template-columns: 1fr; }
+    .barra-movil { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; align-items: center; justify-content: space-between; gap: 10px;
+                   background: var(--tinta); color: var(--fondo); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); font-size: 14px; }
+    .barra-movil .boton { font-size: 16px; padding: 10px 14px; box-shadow: 3px 3px 0 var(--amarillo); border-color: var(--amarillo); }
+    body { padding-bottom: 76px; }
     .hero .ancho { grid-template-columns: 1fr; gap: 40px; }
     .hero { padding-top: 40px; }
     .pasos, .necesitas { grid-template-columns: 1fr; }
@@ -121,18 +143,18 @@
 <nav>
   <div class="ancho">
     <a class="marca" href="#">Reels <i>en Grande</i></a>
-    <a class="boton peq comprar" href="#precio">Lo quiero · 49 €</a>
+    <a class="boton peq comprar" href="#precio">Lo quiero<span class="solo-escritorio"> · <s style="opacity:.55">79 €</s></span> · 49 €</a>
   </div>
 </nav>
 
 <header class="hero puntos">
   <div class="ancho">
     <div>
-      <span class="chip">Pago único · Sin suscripción · Sin curso</span>
-      <h1>Tus reels con datos, <span class="acento">en 5 minutos.</span></h1>
-      <p class="sub">Pagas una vez, le das el pack a Claude y en 5 minutos estás generando el vídeo que quieras: guion, voz, subtítulos, música y las fuentes de cada dato.</p>
+      <div class="oferta lanzamiento"><b>Lanzamiento</b><span><s>79 €</s> 49 € hasta el 31 de octubre</span><span>· Termina en <span class="cuenta">—</span></span></div>
+      <h1>Reels del tema que quieras, <span class="acento">en 5 minutos.</span></h1>
+      <p class="sub">Fútbol, recetas, finanzas, viajes, tu negocio… Le dices a Claude de qué va tu vídeo y te lo da hecho: guion, voz, subtítulos, música y las fuentes de cada dato. Pago único, sin suscripción.</p>
       <a class="boton comprar" href="#precio">Lo quiero · 49 € pago único →</a>
-      <div class="garantias"><span>Te llega al momento</span><span>Cualquier tema</span><span>Tuyo para siempre</span></div>
+      <div class="garantias"><span>Pago único, sin suscripción</span><span>Descarga al momento</span><span>Vídeos ilimitados</span></div>
     </div>
     <div class="movil">
       <video src="media/saber-irpf-tramos.mp4" poster="media/saber-irpf-tramos.jpg" autoplay muted loop playsinline aria-label="Ejemplo de reel: subir de tramo no te baja el sueldo"></video>
@@ -148,6 +170,23 @@
       <div><figure><video src="media/cg-diputado.mp4" poster="media/cg-diputado.jpg" muted loop playsinline preload="none" aria-label="Reel: cuánto gana un diputado"></video></figure><figcaption>«¿Cuánto gana un diputado?»</figcaption></div>
       <div><figure><video src="media/bolsillo-2026-10-08-luz.mp4" poster="media/bolsillo-2026-10-08-luz.jpg" muted loop playsinline preload="none" aria-label="Reel: precio de la luz por horas"></video></figure><figcaption>«La luz de hoy, hora a hora»</figcaption></div>
       <div><figure><video src="media/saber-irpf-tramos.mp4" poster="media/saber-irpf-tramos.jpg" muted loop playsinline preload="none" aria-label="Reel: tramos del IRPF"></video></figure><figcaption>«Subir de tramo no te baja el sueldo»</figcaption></div>
+    </div>
+  </div>
+</section>
+
+<section class="puntos">
+  <div class="ancho">
+    <h2>Del tema <span class="acento">que te dé la gana.</span></h2>
+    <p class="intro">Si se puede contar con un dato, se puede hacer reel. Tú eliges el tema, Claude busca las cifras y monta el vídeo con tu marca y tus colores.</p>
+    <div class="temas">
+      <div class="tema"><b>⚽ Fútbol</b><span>«¿Cuánto cobra un árbitro de Primera?»</span></div>
+      <div class="tema"><b>🏋️ Fitness</b><span>«¿Cuántas calorías quema de verdad correr 30 minutos?»</span></div>
+      <div class="tema"><b>✈️ Viajes</b><span>«Lo que cuesta una semana en Japón, partida a partida»</span></div>
+      <div class="tema"><b>💸 Finanzas</b><span>«Subir de tramo no te baja el sueldo»</span></div>
+      <div class="tema"><b>🏠 Inmobiliaria</b><span>«Lo que pagas de verdad por un piso de 200.000 €»</span></div>
+      <div class="tema"><b>🐶 Mascotas</b><span>«Lo que cuesta tener un perro en España al año»</span></div>
+      <div class="tema"><b>🍳 Cocina</b><span>«Cuánto te ahorras haciendo tú la pizza»</span></div>
+      <div class="tema"><b>🏪 Tu negocio</b><span>«Lo que se queda Hacienda de cada café que vendes»</span></div>
     </div>
   </div>
 </section>
@@ -195,16 +234,22 @@
 <section id="precio" class="seccion-oscura precio">
   <div class="ancho">
     <h2>Un pago. <span style="color:var(--amarillo)">Y a hacer vídeos.</span></h2>
+    <div class="ancla" style="margin-bottom:40px;text-align:center">
+      <div><strong>1,63 €</strong>por vídeo si haces uno al día durante un mes</div>
+      <div><strong>0 €</strong>en editores, plantillas o música con licencia</div>
+      <div><strong>∞</strong>vídeos, para siempre, sin cuota mensual</div>
+    </div>
     <div class="caja-precio">
-      <div class="cifra">49 €<small> · pago único</small></div>
+      <div><span class="tachado">79 €</span><span class="cifra">49 €</span></div>
+      <p style="font-weight:700;margin-top:6px">Precio de lanzamiento hasta el 31 de octubre · termina en <span class="cuenta">—</span></p>
       <ul>
         <li>El pack completo, descarga al momento</li>
         <li>Vídeos ilimitados, sobre lo que quieras</li>
         <li>Úsalo en tus cuentas y en las de tus clientes</li>
         <li>Las mejoras del pack, sin pagar más</li>
       </ul>
-      <a class="boton comprar" id="comprar" href="#">Comprar · 49 € →</a>
-      <p class="nota">IVA incluido. Pago seguro con Stripe. La voz (ElevenLabs) y Claude se pagan aparte, según tu plan.</p>
+      <a class="boton comprar" id="comprar" href="#">Lo quiero a 49 € →</a>
+      <p class="nota">IVA incluido. Pago seguro con Stripe. Desde el 1 de noviembre, 79 €. La voz (ElevenLabs) y Claude se pagan aparte, según tu plan.</p>
     </div>
   </div>
 </section>
@@ -212,14 +257,17 @@
 <section>
   <div class="ancho" style="max-width:820px">
     <h2>Preguntas</h2>
+    <details><summary>¿Por qué 49 € y no 79 €?</summary><p>Es el precio de lanzamiento: hasta el 31 de octubre a las 23:59 (hora de España). Desde el 1 de noviembre el pack cuesta 79 €. Quien compra ahora se queda con todas las mejoras sin pagar la diferencia.</p></details>
+    <details><summary>¿De qué temas puedo hacer vídeos?</summary><p>Del que quieras: deporte, salud, viajes, dinero, cocina, tecnología, tu sector o tu negocio. Funciona mejor con temas que se puedan contar con un dato o una comparación, que es lo que la gente guarda y comparte.</p></details>
     <details><summary>¿Necesito saber programar?</summary><p>No. Necesitas abrir una carpeta con Claude Code y escribirle lo que quieres, en tu idioma. Claude instala lo necesario y ejecuta los comandos por ti.</p></details>
     <details><summary>¿De verdad son 5 minutos?</summary><p>Si ya tienes Claude Code y tu cuenta de ElevenLabs: la instalación tarda 1–2 minutos y cada vídeo, 1–2 minutos más de render mientras Claude prepara el guion. Lo que más tarda es decidir el tema.</p></details>
-    <details><summary>¿Sirve para cualquier tema?</summary><p>Para cualquier tema que se pueda contar con datos: dinero, salud, deporte, tecnología, viajes, tu sector… El método está pensado para explicar una cosa concreta con cifras y fuentes, que es lo que se guarda y se comparte.</p></details>
     <details><summary>¿Cuánto me cuesta cada vídeo?</summary><p>Nada más al pack. La voz de ElevenLabs gasta unos 400–700 caracteres por vídeo: el plan gratuito da para probar y el Starter, para unos 50 vídeos al mes.</p></details>
     <details><summary>¿Funciona en Windows?</summary><p>Está probado en Mac y Linux. En Windows puede funcionar con WSL, pero hoy no lo garantizamos.</p></details>
     <details><summary>¿Y si me atasco?</summary><p>Escríbenos a <a class="email" href="#">hola@reelsengrande.com</a> y te ayudamos a sacar tu primer vídeo.</p></details>
   </div>
 </section>
+
+<div class="barra-movil lanzamiento"><span><b>49 €</b> <s style="opacity:.6">79 €</s> · termina en <span class="cuenta">—</span></span><a class="boton comprar" href="#precio">Lo quiero →</a></div>
 
 <footer>
   <div class="ancho">
@@ -234,6 +282,17 @@
   const EMAIL = 'hola@reelsengrande.com';
   if (COMPRA_URL) document.querySelectorAll('a.comprar').forEach(a => { a.href = COMPRA_URL; });
   document.querySelectorAll('a.email').forEach(a => { a.href = 'mailto:' + EMAIL; a.textContent = EMAIL; });
+  // Precio de lanzamiento real: 49 € hasta el 31/10/2026 23:59 hora de España (CET = UTC+1). Pasada la fecha,
+  // la oferta desaparece sola; el 1/11 se cambian a mano el enlace de Stripe (79 €) y los precios de esta página.
+  const FIN_LANZAMIENTO = new Date('2026-10-31T23:59:59+01:00');
+  function cuentaAtras() {
+    const ms = FIN_LANZAMIENTO - new Date();
+    if (ms <= 0) { document.querySelectorAll('.lanzamiento').forEach(e => e.remove()); return; }
+    const d = Math.floor(ms / 864e5), h = Math.floor(ms % 864e5 / 36e5), m = Math.floor(ms % 36e5 / 6e4), s = Math.floor(ms % 6e4 / 1e3);
+    const t = d > 0 ? `${d} d ${h} h ${m} min` : `${h} h ${m} min ${s} s`;
+    document.querySelectorAll('.cuenta').forEach(e => { e.textContent = t; });
+  }
+  cuentaAtras(); setInterval(cuentaAtras, 1000);
   // Los vídeos de ejemplo solo se reproducen cuando se ven (ahorra datos en el móvil).
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause()), { threshold: .4 });
   document.querySelectorAll('.reels video').forEach(v => io.observe(v));
