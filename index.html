@@ -157,7 +157,7 @@
     <h2>Cómo funciona</h2>
     <p class="intro">No es un curso. Es la herramienta que hace los vídeos, lista para usar.</p>
     <div class="pasos">
-      <div class="tarjeta"><div class="num">1</div><h3>Pagas una vez</h3><p>Te llega el pack al email al momento. Lo descomprimes en tu ordenador.</p></div>
+      <div class="tarjeta"><div class="num">1</div><h3>Pagas una vez</h3><p>Nada más pagar te aparece el enlace de descarga. Lo descomprimes en tu ordenador.</p></div>
       <div class="tarjeta"><div class="num">2</div><h3>Se lo das a Claude</h3><p>Abres la carpeta con Claude Code y le dices qué vídeo quieres.</p><div class="prompt">Hazme un reel sobre cuánto cuesta tener un perro en España</div></div>
       <div class="tarjeta"><div class="num">3</div><h3>Tienes tu vídeo</h3><p>Busca los datos, escribe el guion, pone la voz y la música y te da el vídeo y el texto del post.</p></div>
     </div>
@@ -198,13 +198,13 @@
     <div class="caja-precio">
       <div class="cifra">49 €<small> · pago único</small></div>
       <ul>
-        <li>El pack completo, al momento en tu email</li>
+        <li>El pack completo, descarga al momento</li>
         <li>Vídeos ilimitados, sobre lo que quieras</li>
         <li>Úsalo en tus cuentas y en las de tus clientes</li>
         <li>Las mejoras del pack, sin pagar más</li>
       </ul>
       <a class="boton comprar" id="comprar" href="#">Comprar · 49 € →</a>
-      <p class="nota">IVA incluido. Pago seguro con Lemon Squeezy. La voz (ElevenLabs) y Claude se pagan aparte, según tu plan.</p>
+      <p class="nota">IVA incluido. Pago seguro con Stripe. La voz (ElevenLabs) y Claude se pagan aparte, según tu plan.</p>
     </div>
   </div>
 </section>
@@ -229,10 +229,10 @@
 </footer>
 
 <script>
-  // Un único sitio para el enlace de compra y el email: se rellenan al crear el producto en Lemon Squeezy.
-  const COMPRA_URL = '';   // p. ej. https://reelsengrande.lemonsqueezy.com/buy/xxxxxxxx
+  // Un único sitio para el enlace de compra y el email. Todos los botones .comprar van directos al pago.
+  const COMPRA_URL = 'https://buy.stripe.com/14AdR9fqXdRS1EobK5bMQ00';   // Stripe Payment Link (modo real, Managed Payments)
   const EMAIL = 'hola@reelsengrande.com';
-  if (COMPRA_URL) document.querySelectorAll('#comprar').forEach(a => { a.href = COMPRA_URL; });
+  if (COMPRA_URL) document.querySelectorAll('a.comprar').forEach(a => { a.href = COMPRA_URL; });
   document.querySelectorAll('a.email').forEach(a => { a.href = 'mailto:' + EMAIL; a.textContent = EMAIL; });
   // Los vídeos de ejemplo solo se reproducen cuando se ven (ahorra datos en el móvil).
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause()), { threshold: .4 });
