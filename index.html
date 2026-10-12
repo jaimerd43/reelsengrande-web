@@ -300,7 +300,16 @@
   // Un único sitio para el enlace de compra y el email. Todos los botones .comprar van directos al pago.
   const COMPRA_URL = 'https://buy.stripe.com/14AdR9fqXdRS1EobK5bMQ00';   // Stripe Payment Link (modo real, Managed Payments)
   const EMAIL = 'hola@reelsengrande.com';
-  if (COMPRA_URL) document.querySelectorAll('a.comprar').forEach(a => { a.href = COMPRA_URL; });
+  // De dónde viene cada venta: ?ref=ig_bio (o utm_source) en la URL de llegada, o la web que enlazó →
+  // client_reference_id en Stripe, que sale en cada pago del Dashboard. No se guarda nada en el navegador.
+  const limpia = (s) => (s || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 60);
+  const q = new URLSearchParams(location.search);
+  const origen = limpia(q.get('ref') || q.get('utm_source')) || (document.referrer && !document.referrer.includes(location.host) ? limpia(new URL(document.referrer).hostname.replace(/^www\./, '').replace(/\./g, '_')) : '') || 'directo';
+  if (COMPRA_URL) document.querySelectorAll('a.comprar').forEach(a => {
+    a.href = COMPRA_URL + '?client_reference_id=' + encodeURIComponent(origen);
+    // Clic en «comprar» como evento de GoatCounter (si está cargado): visitas → clics → pagos.
+    a.addEventListener('click', () => { try { window.goatcounter && window.goatcounter.count({ path: 'clic-comprar-' + origen, title: 'Clic en comprar', event: true }); } catch (e) {} });
+  });
   document.querySelectorAll('a.email').forEach(a => { a.href = 'mailto:' + EMAIL; a.textContent = EMAIL; });
   // Precio de lanzamiento real: 49 € hasta el 31/10/2026 23:59 hora de España (CET = UTC+1). Pasada la fecha,
   // la oferta desaparece sola; el 1/11 se cambian a mano el enlace de Stripe (79 €) y los precios de esta página.
