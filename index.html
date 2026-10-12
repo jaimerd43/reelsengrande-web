@@ -76,6 +76,12 @@
   .reels video { width: 100%; height: 100%; object-fit: cover; display: block; }
   .reels figcaption { text-align: center; font-weight: 600; margin-top: 10px; opacity: .8; font-size: 16px; }
 
+  .videos-paso { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .videos-paso figure { border: 3px solid var(--fondo); border-radius: 18px; overflow: hidden; aspect-ratio: 9/16; background: #000; }
+  .videos-paso video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .videos-paso figcaption { text-align: center; font-weight: 700; margin-top: 10px; font-size: 16px; }
+  .videos-paso figcaption span { display: block; font-weight: 500; opacity: .75; font-size: 14px; }
+
   .incluye { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 28px; }
   .incluye li { list-style: none; display: flex; gap: 12px; align-items: flex-start; font-size: 18px; padding: 12px 0; border-bottom: 2px dashed rgba(18,18,18,.18); }
   .incluye li b { display: block; font-family: var(--titular); font-size: 21px; }
@@ -129,6 +135,7 @@
     .hero { padding-top: 40px; }
     .pasos, .necesitas { grid-template-columns: 1fr; }
     .reels { grid-template-columns: 1fr 1fr; }
+    .videos-paso { grid-template-columns: 1fr 1fr; }
     .reels > div:last-child { display: none; }
     .incluye { grid-template-columns: 1fr; }
     section { padding: 56px 0; }
@@ -199,6 +206,19 @@
       <div class="tarjeta"><div class="num">1</div><h3>Pagas una vez</h3><p>Nada más pagar te aparece el enlace de descarga. Lo descomprimes en tu ordenador.</p></div>
       <div class="tarjeta"><div class="num">2</div><h3>Se lo das a Claude</h3><p>Abres la carpeta con Claude Code y le dices qué vídeo quieres.</p><div class="prompt">Hazme un reel sobre cuánto cuesta tener un perro en España</div></div>
       <div class="tarjeta"><div class="num">3</div><h3>Tienes tu vídeo</h3><p>Busca los datos, escribe el guion, pone la voz y la música y te da el vídeo y el texto del post.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="paso-a-paso" class="seccion-oscura">
+  <div class="ancho">
+    <h2>Míralo paso a paso. <span style="color:var(--amarillo)">Sin saber programar.</span></h2>
+    <p class="intro">Cuatro vídeos de menos de 30 segundos: desde que pagas hasta que tienes tu primer reel. Con sonido.</p>
+    <div class="videos-paso">
+      <div><figure><video src="media/tutorial-1.mp4" poster="media/tutorial-1.jpg" controls playsinline preload="none" aria-label="Paso 1: Pagas y lo descargas"></video></figure><figcaption>1. Pagas y lo descargas<span>El enlace sale al pagar</span></figcaption></div>
+      <div><figure><video src="media/tutorial-2.mp4" poster="media/tutorial-2.jpg" controls playsinline preload="none" aria-label="Paso 2: Lo abres con Claude"></video></figure><figcaption>2. Lo abres con Claude<span>La app, pestaña Code</span></figcaption></div>
+      <div><figure><video src="media/tutorial-3.mp4" poster="media/tutorial-3.jpg" controls playsinline preload="none" aria-label="Paso 3: La primera vez"></video></figure><figcaption>3. La primera vez<span>Claude lo prepara solo</span></figcaption></div>
+      <div><figure><video src="media/tutorial-4.mp4" poster="media/tutorial-4.jpg" controls playsinline preload="none" aria-label="Paso 4: Tu primer vídeo"></video></figure><figcaption>4. Tu primer vídeo<span>Listo para subir</span></figcaption></div>
     </div>
   </div>
 </section>
