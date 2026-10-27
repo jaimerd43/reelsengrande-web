@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reels en Grande · Reels del tema que quieras, en 5 minutos</title>
-<meta name="description" content="Reels del tema que quieras, con voz, subtítulos, música y datos, en 5 minutos. Pago único: 49 € de lanzamiento hasta el 31 de octubre (después, 79 €).">
+<meta name="description" content="Reels del tema que quieras, en plano o en 3D, con voz, subtítulos, música y datos, en 5 minutos. Pago único: 49 € de lanzamiento hasta el 31 de octubre (después, 79 €).">
 <meta property="og:title" content="Reels en Grande · Tus reels con datos, en 5 minutos">
-<meta property="og:description" content="Pago único. Sin curso. En 5 minutos estás generando el vídeo que quieras.">
+<meta property="og:description" content="Los dos formatos en un pack: plano y 3D. Pago único. En 5 minutos estás generando el vídeo que quieras.">
 <meta property="og:image" content="https://reelsengrande.com/media/saber-irpf-tramos.jpg">
 <meta property="og:url" content="https://reelsengrande.com">
 <meta property="og:locale" content="es_ES">
@@ -122,8 +122,28 @@
   .ancla strong { display: block; font-family: var(--titular); font-size: 46px; color: var(--amarillo); line-height: 1; }
   .tachado { font-family: var(--titular); font-weight: 800; font-size: 34px; color: var(--gris); text-decoration: line-through; margin-right: 10px; }
   .barra-movil { display: none; }
+  .formatos { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 56px; }
+  .formato { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 22px; align-items: center; background: #1d1d1d; border: 3px solid var(--fondo); border-radius: 24px; padding: 18px; }
+  .formato figure { border-radius: 16px; overflow: hidden; aspect-ratio: 9/16; background: #000; }
+  .formato video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .formato h3 { font-size: 34px; margin: 10px 0 8px; }
+  .formato p { opacity: .85; font-size: 17px; }
+  .formato .chip { margin-bottom: 0; font-size: 13px; }
+  .formato .chip.nuevo { background: var(--amarillo); color: var(--tinta); }
+  .formato ul { padding: 0; margin-top: 12px; }
+  .formato li { list-style: none; font-size: 15px; padding: 3px 0; opacity: .9; }
+  .formato li::before { content: "→ "; color: var(--amarillo); font-weight: 800; }
+  .subtitulo { font-family: var(--titular); font-size: 28px; margin-bottom: 18px; }
+  .usos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .usos .tarjeta { padding: 22px; }
+  .usos .tarjeta h3 { font-size: 23px; }
+  .usos .tarjeta p { font-size: 16px; }
   @media (max-width: 860px) {
     .temas { grid-template-columns: 1fr 1fr; }
+    .formatos { grid-template-columns: 1fr; }
+    .formato { grid-template-columns: 130px 1fr; gap: 16px; padding: 14px; }
+    .formato h3 { font-size: 27px; }
+    .usos { grid-template-columns: 1fr; }
     .solo-escritorio { display: none; }
     .marca { font-size: 20px; }
     .ancla { grid-template-columns: 1fr; }
@@ -159,7 +179,7 @@
     <div>
       <div class="oferta lanzamiento"><b>Lanzamiento</b><span><s>79 €</s> 49 € hasta el 31 de octubre</span><span>· Termina en <span class="cuenta">—</span></span></div>
       <h1>Reels del tema que quieras, <span class="acento">en 5 minutos.</span></h1>
-      <p class="sub">Fútbol, recetas, finanzas, viajes, tu negocio… Le dices a Claude de qué va tu vídeo y te lo da hecho: guion, voz, subtítulos, música y las fuentes de cada dato. Pago único, sin suscripción.</p>
+      <p class="sub">Fútbol, recetas, finanzas, viajes, tu negocio… Le dices a Claude de qué va tu vídeo y te lo da hecho, en plano o en 3D: guion, voz, subtítulos, música y las fuentes de cada dato. Pago único, sin suscripción.</p>
       <a class="boton comprar" href="#precio">Lo quiero · 49 € pago único →</a>
       <div class="garantias"><span>Pago único, sin suscripción</span><span>Descarga al momento</span><span>Vídeos ilimitados</span></div>
     </div>
@@ -171,12 +191,38 @@
 
 <section class="seccion-oscura">
   <div class="ancho">
-    <h2>Así salen. <span style="color:var(--amarillo)">Sin tocar un editor.</span></h2>
-    <p class="intro">Son reels de <a href="https://www.instagram.com/letragrande/" target="_blank" rel="noopener">@letragrande</a>, la cuenta en la que se hizo este método. Cada uno salió de una frase.</p>
+    <h2>Dos formatos. <span style="color:var(--amarillo)">Un solo pack.</span></h2>
+    <p class="intro">Claude elige el que encaja con tu tema, o el que le pidas. Sin tocar un editor. Son reels de <a href="https://www.instagram.com/letragrande/" target="_blank" rel="noopener">@letragrande</a>, la cuenta en la que se hizo este método.</p>
+    <div class="formatos">
+      <div class="formato">
+        <figure><video src="media/formato-plano.mp4" poster="media/formato-plano.jpg" muted loop playsinline preload="none" aria-label="Formato plano: reel con tarjetas, cifras y subtítulos"></video></figure>
+        <div><span class="chip">Formato 1</span><h3>Plano</h3><p>Tarjetas con cifras que cuentan, barras, listas y una pregunta al final.</p>
+          <ul><li>El dato del día, listas, comparativas rápidas</li><li>Sale en menos de un minuto</li></ul></div>
+      </div>
+      <div class="formato">
+        <figure><video src="media/formato-3d.mp4" poster="media/formato-3d.jpg" muted loop playsinline preload="none" aria-label="Formato 3D: un mundo en 3D que recorre la cámara, con subtítulo palabra a palabra"></video></figure>
+        <div><span class="chip nuevo">Formato 2 · Nuevo</span><h3>3D</h3><p>Un mundo en 3D que recorre la cámara, con subtítulo palabra a palabra y una cifra gigante.</p>
+          <ul><li>Los vídeos de «cómo funciona» que más se comparten</li><li>Comparar cantidades o explicar un proceso, sin programar</li></ul></div>
+      </div>
+    </div>
+    <p class="subtitulo">Más reels hechos así</p>
     <div class="reels">
-      <div><figure><video src="media/cg-diputado.mp4" poster="media/cg-diputado.jpg" muted loop playsinline preload="none" aria-label="Reel: cuánto gana un diputado"></video></figure><figcaption>«¿Cuánto gana un diputado?»</figcaption></div>
-      <div><figure><video src="media/bolsillo-2026-10-08-luz.mp4" poster="media/bolsillo-2026-10-08-luz.jpg" muted loop playsinline preload="none" aria-label="Reel: precio de la luz por horas"></video></figure><figcaption>«La luz de hoy, hora a hora»</figcaption></div>
-      <div><figure><video src="media/saber-irpf-tramos.mp4" poster="media/saber-irpf-tramos.jpg" muted loop playsinline preload="none" aria-label="Reel: tramos del IRPF"></video></figure><figcaption>«Subir de tramo no te baja el sueldo»</figcaption></div>
+      <div><figure><video src="media/cg-diputado.mp4" poster="media/cg-diputado.jpg" muted loop playsinline preload="none" aria-label="Reel plano: cuánto gana un diputado"></video></figure><figcaption>Plano · «¿Cuánto gana un diputado?»</figcaption></div>
+      <div><figure><video src="media/saber-fgd-quiebra.mp4" poster="media/saber-fgd-quiebra.jpg" muted loop playsinline preload="none" aria-label="Reel 3D: qué pasa con tu dinero si tu banco quiebra"></video></figure><figcaption>3D · «¿Y si tu banco quiebra mañana?»</figcaption></div>
+      <div><figure><video src="media/saber-irpf-tramos.mp4" poster="media/saber-irpf-tramos.jpg" muted loop playsinline preload="none" aria-label="Reel: tramos del IRPF"></video></figure><figcaption>Plano · «Subir de tramo no te baja el sueldo»</figcaption></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="ancho">
+    <h2>Para lo que <span class="acento">lo necesites.</span></h2>
+    <p class="intro">El mismo motor sirve para crecer una cuenta, vender o trabajar para otros.</p>
+    <div class="usos">
+      <div class="tarjeta"><h3>Tu marca personal</h3><p>Cuenta lo que sabes de tu oficio con datos: lo que nadie explica de tu sector, en 40 segundos.</p></div>
+      <div class="tarjeta"><h3>Vender tu producto</h3><p>Enseña paso a paso cómo funciona tu producto o servicio, o cuánto ahorra frente a la alternativa.</p></div>
+      <div class="tarjeta"><h3>Divulgar</h3><p>Una cuenta de «cómo funciona» o de datos sobre el tema que te apasiona, con un vídeo al día.</p></div>
+      <div class="tarjeta"><h3>Tus clientes</h3><p>Si llevas redes de otros: sus colores, su nombre y la voz que elijan, en cada vídeo. La licencia lo permite.</p></div>
     </div>
   </div>
 </section>
@@ -231,7 +277,8 @@
       <li><span><b>El motor de vídeo</b>Vertical 1080×1920, animaciones, subtítulos palabra a palabra y barra de progreso.</span></li>
       <li><span><b>Voz natural</b>Con ElevenLabs, elegida por ti entre muestras, y comprobada frase a frase.</span></li>
       <li><span><b>Música y efectos propios</b>Generados por código: sin derechos de autor ni avisos de copyright.</span></li>
-      <li><span><b>6 tipos de escena</b>Portada, cifra, barras, lista, gráfico por horas y cierre con pregunta para comentarios.</span></li>
+      <li><span><b>Formato plano</b>6 tipos de escena: portada, cifra, barras, lista, gráfico por horas y cierre con pregunta.</span></li>
+      <li><span><b>Formato 3D</b>Dos mundos listos (comparar cantidades y explicar un proceso) y el método para que Claude cree los tuyos.</span></li>
       <li><span><b>Fuentes en pantalla</b>Cada número sale con su fuente: la confianza es lo que hace crecer la cuenta.</span></li>
       <li><span><b>Tu marca</b>Tus colores, tu nombre y tu foto de perfil generada con el mismo estilo.</span></li>
       <li><span><b>Guía para programar</b>Cómo dejar las semanas programadas en Instagram gratis, aunque apagues el ordenador.</span></li>
@@ -245,7 +292,7 @@
     <p class="intro">Con esto ya instalado, en 5 minutos estás generando tu primer vídeo. Si te falta algo, el instalador te dice qué y cómo.</p>
     <div class="necesitas">
       <div class="tarjeta"><h3>Claude Code</h3><p>El asistente de Anthropic que usa la skill. Funciona con tu plan de Claude.</p></div>
-      <div class="tarjeta"><h3>Una cuenta de ElevenLabs</h3><p>Para la voz. La gratuita vale para probar; el plan Starter da para unos 50 vídeos al mes.</p></div>
+      <div class="tarjeta"><h3>Una cuenta de ElevenLabs</h3><p>Para la voz. La gratuita vale para probar; el plan Starter da para unos 30–70 vídeos al mes.</p></div>
       <div class="tarjeta"><h3>Mac, Windows o Linux</h3><p>Con Node, Python y ffmpeg. Si no los tienes, el instalador te da el comando exacto.</p></div>
     </div>
   </div>
@@ -263,7 +310,8 @@
       <div><span class="tachado">79 €</span><span class="cifra">49 €</span></div>
       <p style="font-weight:700;margin-top:6px">Precio de lanzamiento hasta el 31 de octubre · termina en <span class="cuenta">—</span></p>
       <ul>
-        <li>El pack completo, descarga al momento</li>
+        <li>El pack completo, con los dos formatos: plano y 3D</li>
+        <li>Descarga al momento</li>
         <li>Vídeos ilimitados, sobre lo que quieras</li>
         <li>Úsalo en tus cuentas y en las de tus clientes</li>
         <li>Las mejoras del pack, sin pagar más</li>
@@ -278,10 +326,11 @@
   <div class="ancho" style="max-width:820px">
     <h2>Preguntas</h2>
     <details><summary>¿Por qué 49 € y no 79 €?</summary><p>Es el precio de lanzamiento: hasta el 31 de octubre a las 23:59 (hora de España). Desde el 1 de noviembre el pack cuesta 79 €. Quien compra ahora se queda con todas las mejoras sin pagar la diferencia.</p></details>
+    <details><summary>¿Qué diferencia hay entre el plano y el 3D?</summary><p>El plano son tarjetas que se suceden (cifras, barras, listas): va muy bien para el dato del día y sale en menos de un minuto. El 3D es un mundo que la cámara recorre, con subtítulo palabra a palabra: es el formato de los vídeos «cómo funciona» y el que más se comparte. Trae dos mundos listos, uno para comparar cantidades y otro para explicar un proceso; Claude rellena lo que se ve con los datos de tu tema. Los dos vienen en el mismo pack, por el mismo precio.</p></details>
     <details><summary>¿De qué temas puedo hacer vídeos?</summary><p>Del que quieras: deporte, salud, viajes, dinero, cocina, tecnología, tu sector o tu negocio. Funciona mejor con temas que se puedan contar con un dato o una comparación, que es lo que la gente guarda y comparte.</p></details>
     <details><summary>¿Necesito saber programar?</summary><p>No. Necesitas abrir una carpeta con Claude Code y escribirle lo que quieres, en tu idioma. Claude instala lo necesario y ejecuta los comandos por ti.</p></details>
-    <details><summary>¿De verdad son 5 minutos?</summary><p>Si ya tienes Claude Code y tu cuenta de ElevenLabs: la instalación tarda 1–2 minutos y cada vídeo, 1–2 minutos más de render mientras Claude prepara el guion. Lo que más tarda es decidir el tema.</p></details>
-    <details><summary>¿Cuánto me cuesta cada vídeo?</summary><p>Nada más al pack. La voz de ElevenLabs gasta unos 400–700 caracteres por vídeo: el plan gratuito da para probar y el Starter, para unos 50 vídeos al mes.</p></details>
+    <details><summary>¿De verdad son 5 minutos?</summary><p>Si ya tienes Claude Code y tu cuenta de ElevenLabs: la instalación tarda 1–2 minutos y el render, menos de un minuto en plano y unos 2–3 en 3D (más en ordenadores sin gráfica potente). Lo que más tarda es decidir el tema.</p></details>
+    <details><summary>¿Cuánto me cuesta cada vídeo?</summary><p>Nada más al pack. La voz de ElevenLabs gasta unos 400–900 caracteres por vídeo (el 3D, que es más largo, gasta más): el plan gratuito da para probar y el Starter, para unos 30–70 vídeos al mes.</p></details>
     <details><summary>¿Funciona en Windows?</summary><p>Sí. Funciona en Windows, Mac y Linux: abres la carpeta con Claude y él se encarga del resto. Si a tu ordenador le falta algo, el instalador te dice qué es y el comando exacto para ponerlo.</p></details>
     <details><summary>¿Y si me atasco?</summary><p>Escríbenos a <a class="email" href="#">hola@reelsengrande.com</a> y te ayudamos a sacar tu primer vídeo.</p></details>
   </div>
@@ -324,7 +373,7 @@
   cuentaAtras(); setInterval(cuentaAtras, 1000);
   // Los vídeos de ejemplo solo se reproducen cuando se ven (ahorra datos en el móvil).
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause()), { threshold: .4 });
-  document.querySelectorAll('.reels video').forEach(v => io.observe(v));
+  document.querySelectorAll('.reels video, .formato video').forEach(v => io.observe(v));
 </script>
 </body>
 </html>
